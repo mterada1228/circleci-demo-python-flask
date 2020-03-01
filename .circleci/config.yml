@@ -44,3 +44,10 @@ jobs:
           destination: tr1
       - store_test_results:
           path: test-reports/
+  deploy:
+    steps:
+      - checkout
+      - run:
+          name: Deploy Master to Heroku
+          command: |
+            git push https://git.heroku.com/hidden-stream-09794.git master
